@@ -1,0 +1,353 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+}
+#number-input {
+  padding: 10px;
+  font-size: 20px;
+}
+
+#input-container {
+  margin-bottom: 20px;
+  margin-left: 30px;
+  margin-top: 40px;
+}
+.tituloBurbuja {
+  margin-top: 30px;
+  font-size: 40px;
+  text-align: center;
+}
+.contenedorCompleto {
+  position: absolute;
+  width: 100%;
+}
+#output {
+  height: 30px;
+  display: none;
+  align-items: center;
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: black;
+  color: white;
+}
+
+#output1 {
+  margin-top: 20px;
+  height: 30px;
+  padding: 10px;
+  display: none;
+  align-items: center;
+  border: 1px solid #ccc;
+  background-color: rgb(80, 78, 78);
+  color: white;
+}
+.agregar {
+  background-color: rgb(22, 137, 194);
+}
+.ordenar {
+  background-color: rgb(15, 186, 41);
+}
+button {
+  font-size: 20px;
+  padding: 10px;
+  font-weight: bold;
+}
+.reiniciar {
+  background-color: red;
+  display: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.bx {
+  font-size: 40px;
+  margin-right: 50px;
+}
+.texto {
+  padding: 0 20px;
+  margin-top: 20px;
+  font-size: 30px;
+  text-align: center;
+  position: relative;
+  top: 12vh;
+}
+.barraLateral {
+  background-color: aqua;
+  width: 40%;
+  height: 88vh;
+  position: fixed;
+  top: 12vh;
+  z-index: 10;
+  background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  flex-direction: column;
+
+  /* flex-direction: column;
+  justify-content: space-between; */
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  align-items: center;
+  transform: translate(-110%);
+  box-shadow: 0 0 0 2px rgb(0, 0, 0, 0.5);
+}
+.imagenes {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  position: relative;
+  top: 12vh;
+}
+.imagenes img {
+  width: 50%;
+}
+.contenedorCompleto11 {
+  top: 10vh;
+  position: relative;
+}
+.spread {
+  transform: translate(0);
+}
+.lema {
+  color: #2b8fed;
+  font-size: 40px;
+}
+.barraLateral a {
+  flex: 1;
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
+  height: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+}
+.barraLateral a:hover {
+  background-color: rgb(229, 221, 221, 0.3);
+}
+.contenedorBarra {
+  z-index: 5;
+  width: 100%;
+  background-color: #929294;
+  margin: 0;
+  height: 12vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  border-bottom: 4px solid black;
+}
+.infoBarra {
+  margin-right: 2rem;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  border-radius: 5px;
+}
+.imagenBarra {
+  border-radius: 50%;
+  width: 4.5rem;
+  margin-right: 10px;
+  border: 3px solid black;
+}
+.nombreBarra {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 45px;
+}
+.empresaBarra {
+  display: flex;
+  align-items: center;
+  margin-left: 2rem;
+}
+.logoEmpresa {
+  width: 5rem;
+  height: 5rem;
+}
+
+.nombreEmpresaBarra {
+  text-transform: uppercase;
+  margin-left: 10px;
+  font-weight: bold;
+  font-size: 60px;
+}
+
+.salirUsuario {
+  max-width: 45rem;
+  min-width: 20rem;
+  height: 15rem;
+  background-color: rgb(214, 217, 219);
+  position: absolute;
+  right: 0;
+  border: 3px solid black;
+  display: none;
+  z-index: 100;
+}
+.barraSuperior {
+  background-color: rgb(229, 232, 232);
+  height: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 3px solid black;
+}
+.datosBarra {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 16px;
+  height: 100%;
+  margin: 0;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.datosUsuario {
+  color: #0d61e8;
+}
+.datosGenerales {
+  display: flex;
+  align-items: center;
+  height: 75%;
+}
+.datosEspecificos {
+  margin: 0 auto;
+  align-items: center;
+}
+.datosEspecificos h2 {
+  margin-bottom: 10px;
+}
+.datosGeneralesImagen {
+  border: 2px solid black;
+  border-radius: 50%;
+  margin: 5px;
+  width: 100px;
+  height: 100px;
+}
+.contenedorImagenDatos {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+.contenedorDatosUsuario {
+  text-transform: uppercase;
+  font-size: 20px;
+  margin-right: 10px;
+}
+.correo {
+  font-size: 20px;
+  margin-right: 10px;
+  overflow: hidden;
+}
+/* boton salir*/
+.btnBotonSalir:hover {
+  cursor: pointer;
+  background-color: rgb(169, 174, 174);
+}
+
+@media screen and (max-width: 500px) {
+  .nombreEmpresaBarra {
+    font-size: 15px;
+    margin-left: 5px;
+  }
+  .logoEmpresa {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  .imagenBarra {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  .empresaBarra {
+    margin-left: 0.5rem;
+  }
+  .infoBarra {
+    margin-right: 0.5rem;
+  }
+  .salirUsuario {
+    max-width: 30rem;
+    min-width: 10rem;
+    height: 12rem;
+  }
+
+  .datosBarra {
+    font-size: 10px;
+  }
+
+  .datosGeneralesImagen {
+    border-radius: 50%;
+    margin: 2px;
+    width: 60px;
+    height: 60px;
+  }
+
+  .contenedorDatosUsuario {
+    font-size: 12px;
+  }
+  .correo {
+    font-size: 12px;
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px auto;
+  max-width: 400px;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+form label {
+  display: block;
+  margin-bottom: 5px;
+}
+form input {
+  margin-bottom: 10px;
+  padding: 5px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+form button {
+  margin-top: 10px;
+  padding: 5px 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  background-color: #2b8fed;
+  color: white;
+}
+table {
+  border-collapse: collapse;
+  margin: 0 auto;
+  max-width: 800px;
+}
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+th {
+  background-color: #2b8fed;
+  color: white;
+}
+.imprimir {
+  background-color: black;
+  color: white;
+  padding: 10px;
+  font-size: 15px;
+  margin-left: 30px;
+}

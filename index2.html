@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Registro de empleados</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://necolas.github.io/normalize.css/8.0.1/normalize.css"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container11">
+      <div class="contenedorBarra">
+        <div class="empresaBarra">
+          <i class="bx bx-menu"></i>
+
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/UTP-logo.svg/2270px-UTP-logo.svg.png"
+            class="logoEmpresa"
+          />
+
+          <h4 class="nombreEmpresaBarra">UTP</h4>
+        </div>
+
+        <div class="infoBarra">
+          <span class="nombreBarra">Grupo 1</span>
+        </div>
+      </div>
+      <div class="barraLateral">
+        <a href="index.html">Inicio</a>
+        <a href="index3.html">Metodo Burbuja</a>
+        <a href="index2.html">Lista Doble Enlazadas</a>
+        <a href="index4.html">Tabla Hash</a>
+      </div>
+    </div>
+
+    <div class="contenedorCompleto11">
+      <h1 class="tituloBurbuja"><u>Registro de empleados</u></h1>
+
+      <form id="formulario-registro">
+        <label for="codigo">Código:</label>
+        <input type="text" id="codigo" name="codigo" required /><br />
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required /><br />
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" name="apellido" required /><br />
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required /><br />
+        <button type="button" id="boton-guardar">Guardar</button>
+        <button type="button" id="boton-actualizar">Actualizar</button>
+        <button type="button" id="boton-consultar">Consultar</button>
+        <button type="button" id="boton-eliminar">Eliminar</button>
+      </form>
+      <table id="tabla-empleados">
+        <thead>
+          <tr>
+            <th>Orden</th>
+            <th>Código</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody class="llenar-datos"></tbody>
+      </table>
+      <button class="imprimir">Imprimir PDF</button>
+    </div>
+
+    <script src="app2.js"></script>
+    <script src="app1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.js"></script>
+    <script>
+      const tabla = document.querySelector("#tabla-empleados");
+      const boton = document.querySelector(".imprimir");
+      boton.addEventListener("click", () => {
+        const doc = new jsPDF("p", "pt", "letter");
+        const margin = 20;
+        const scale =
+          (doc.internal.pageSize.width - margin * 2) /
+          document.body.scrollWidth;
+        doc.html(tabla, {
+          x: margin,
+          y: margin,
+          html2canvas: {
+            scale: scale,
+          },
+          callback: function (doc) {
+            doc.save("lista");
+          },
+        });
+      });
+    </script>
+  </body>
+</html>
